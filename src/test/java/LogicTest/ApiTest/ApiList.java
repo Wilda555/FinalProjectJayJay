@@ -19,7 +19,7 @@ public class ApiList {
 
     public void checkResponseBodyListTags() {
         System.out.println("test logic for check response body get List user");
-        // please add code detail
+
         Assert.assertNotNull(res.getBody().jsonPath().get("data"));
     }
 }

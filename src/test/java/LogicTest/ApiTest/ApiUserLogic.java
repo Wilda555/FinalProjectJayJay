@@ -39,7 +39,6 @@ public class ApiUserLogic {
         for(int i=0; i<data.length(); i++){
             JSONObject user = (JSONObject) data.get(i);
 
-            // verify data
             Assert.assertNotNull(user.get("id"));
             assertThat(user.get("title")).isIn("mr", "ms", "mrs", "miss", "dr", "");
             Assert.assertNotNull(user.get("firstName"));
@@ -56,7 +55,6 @@ public class ApiUserLogic {
         System.out.println("validation response body profile user process normal");
         JSONObject userProfile = new JSONObject(res.getBody().asString());
 
-        // verify data
         Assert.assertNotNull(userProfile.get("id"));
         assertThat(userProfile.get("title")).isIn("mr", "ms", "mrs", "miss", "dr", "");
         Assert.assertNotNull(userProfile.get("firstName"));
@@ -68,7 +66,7 @@ public class ApiUserLogic {
         System.out.println("validation response body profile user process failed");
         JSONObject notification = new JSONObject(res.getBody().asString());
 
-        // verify data
+
         String actualMessage = notification.get("error").toString();
         System.out.println("actual message: " + actualMessage);
         Assert.assertEquals(actualMessage, expectedMessage);

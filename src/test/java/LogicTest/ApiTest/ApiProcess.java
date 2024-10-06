@@ -11,7 +11,7 @@ import java.io.File;
 
 public class ApiProcess {
 
-    /*check response data in application JSONShcema*/
+
     public static void validationResponseData(Response currentRes, String data){
         System.out.println("check response data : " + data);
         File fileUsersJson = getJSONSchemaFile(data);
@@ -22,7 +22,7 @@ public class ApiProcess {
         return new File("src/test/resources/JSONSchemaData/" + JSONFile);
     }
 
-    /*check status code response same with  status code expected*/
+
     public static void validationStatusCode(Response currentRes, int expectedStatusCode){
         System.out.println("check status code : " + expectedStatusCode);
         Assert.assertEquals(currentRes.getStatusCode(), expectedStatusCode);
